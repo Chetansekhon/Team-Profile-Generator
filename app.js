@@ -38,8 +38,10 @@ function menu(){
             createIntern()
         }
         else{
-            // Build team function
+             BuildTeam()
         }
+            
+    
         })
 }
 function createManager(){
@@ -146,6 +148,14 @@ function createIntern(){
 
     )
 }
+
+function BuildTeam() {
+    fs.writeFile(outputPath, render(employeeInfo), (err) =>{
+        console.log("creating your team profile")
+        if(err) throw err
+    })
+}
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -168,3 +178,4 @@ function createIntern(){
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+menu();
